@@ -1,4 +1,5 @@
 var config = require('./config.json');
+var tracks = require('./tracks.json');
 
 var express = require('express');
 
@@ -17,15 +18,9 @@ var tw = new Twitter({
 });
 
 
-
-
-tw.track('roses2016');
-tw.track('roses16');
-tw.track('rosesarered');
-tw.track('rosesarewhite');
-
-
-
+for (var i in tracks) {
+  tw.track(tracks[i]);
+}
 
 
 
