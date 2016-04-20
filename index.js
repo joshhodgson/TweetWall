@@ -21,7 +21,6 @@ var tw = new Twitter({
 
 tw.track('roses2016');
 tw.track('roses16');
-tw.track('roses');
 tw.track('rosesarered');
 tw.track('rosesarewhite');
 
