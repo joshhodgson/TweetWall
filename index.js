@@ -35,15 +35,26 @@ tw.on('tweet', function(tweet) {
   //console.log(JSON.stringify(tweet));
   console.log("Tweet!");
 
-  var tweetText = "<a href='#'>"+tweet.user.name + "</a>: " + tweet.text;
-  var team = "lancs";
-  if(tweetText.toLowerCase().indexOf("lancaster")>-1) {team="lancs";}
-  if(tweetText.toLowerCase().indexOf("york")>-1) {team="york";}
-  if(tweetText.toLowerCase().indexOf("rosesarewhite")>-1) {team="york";}
-  if(tweetText.toLowerCase().indexOf("rosesarered")>-1) {team="lancs";}
+  var tweetText = "<a href='#'>" + tweet.user.name + "</a>: " + tweet.text;
+  var team = Math.random() < 0.5 ? "lancs" : "york";
+  if (tweetText.toLowerCase().indexOf("lancaster") > -1) {
+    team = "lancs";
+  }
+  if (tweetText.toLowerCase().indexOf("york") > -1) {
+    team = "york";
+  }
+  if (tweetText.toLowerCase().indexOf("rosesarewhite") > -1) {
+    team = "york";
+  }
+  if (tweetText.toLowerCase().indexOf("rosesarered") > -1) {
+    team = "lancs";
+  }
 
 
-if(team){
-  io.emit('tweet', {team: team, text: tweetText});
-}
+  if (team) {
+    io.emit('tweet', {
+      team: team,
+      text: tweetText
+    });
+  }
 });
