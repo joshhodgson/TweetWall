@@ -3,7 +3,7 @@ var config = require('./config.json');
 var express = require('express');
 
 var app = express();
-app.use(express.static('dist'));
+app.use(express.static('public'));
 var server = app.listen(8080);
 var io = require('socket.io')(server);
 
