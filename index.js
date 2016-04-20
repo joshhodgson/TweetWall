@@ -35,7 +35,7 @@ tw.on('tweet', function(tweet) {
   //console.log(JSON.stringify(tweet));
   console.log("Tweet!");
 
-  var tweetText = "<a href=''>"+tweet.user.name + "</a>: " + tweet.text;
+  var tweetText = "<a href='#'>"+tweet.user.name + "</a>: " + tweet.text;
   var team;
   if(tweetText.toLowerCase().indexOf("lancaster")>-1) {team="lancs";}
   if(tweetText.toLowerCase().indexOf("york")>-1) {team="york";}
