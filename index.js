@@ -30,6 +30,7 @@ tw.on('tweet', function(tweet) {
   console.log("Tweet!");
 
   var tweetText = "<a href='#'>" + tweet.user.name + "</a>: " + tweet.text;
+  tweetText = tweetText.replace(/[^A-Za-z 0-9 \.,\?""!@#\$%\^&\*\(\)-_=\+;:<>\/\\\|\}\{\[\]`~]*/g, '') ;
   var team = Math.random() < 0.5 ? "lancs" : "york";
   if (tweetText.toLowerCase().indexOf("lancaster") > -1) {
     team = "lancs";
