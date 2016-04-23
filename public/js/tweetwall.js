@@ -168,8 +168,12 @@ function finishedTyping(cell){
 }
 
 function switchFreeCell(toClass, message){
+	if(cellPool.length>2){
 	var cell = cellPool[Math.floor(Math.random()*cellPool.length)];
+	if(cell){
 	switchCell(cell,config.dirs[Math.floor(4*Math.random())],toClass,message);
+	console.log(message)
+}}
 }
 
 var exports = {};
