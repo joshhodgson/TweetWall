@@ -153,7 +153,7 @@
         $(".typed-cursor", background).remove();
         if (message != undefined && message != null) {
             backgroundTweet.typed({
-                contentType: 'text',
+                contentType: 'html',
                 strings: [message],
                 typeSpeed: 100,
                 startDelay: 1000,

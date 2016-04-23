@@ -56,7 +56,7 @@ tw.on('tweet', function(tweet) {
             timer = setTimeout(function() {
                 io.emit('tweet', tweetPending);
                 console.log(JSON.stringify(tweetPending.text))
-            }, 500)
+            }, 250)
         }
     }
 });
